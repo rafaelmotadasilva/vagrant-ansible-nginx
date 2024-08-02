@@ -102,9 +102,3 @@ Crie a role `nginx` para realizar as seguintes tarefas:
     state: started
     enabled: yes
 ```
-
-## Acesse via navegador:
-
-```
-http://ip-vm/cep.html
-```
