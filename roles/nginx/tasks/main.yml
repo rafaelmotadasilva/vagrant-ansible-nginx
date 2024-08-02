@@ -1,0 +1,23 @@
+---
+- name: Atualizar o servidor
+  apt:
+    update_cache: yes
+
+- name: Instalar o Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Copiar site para o servidor Nginx
+  copy:
+    src: website/
+    dest: /var/www/html/
+    owner: www-data
+    group: www-data
+    mode: '0755'
+
+- name: Iniciar o serviço do Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
